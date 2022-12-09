@@ -80,7 +80,7 @@
 .block{
   width: 100%;
   height: 510px;
-  background: url(/img/block/foto.png) center no-repeat;
+  background: url(./img/block/foto.png) center no-repeat;
   background-size: cover;
 }
 .block-info{
