@@ -92,20 +92,20 @@ switcher.forEach(item =>{
 
   item.addEventListener('click', event =>{
 
-   if(event.tabs !== switcher){
+   if(event.item !== switchersColor){
       handleChangeColor(event.target.dataset.set)
       localStorage.setItem('set', event.target.dataset.set )
    }
-
   })
 })
 
 function handleChangeColor(color){
   let newUrl = `./css/${color}.css`;
+  console.log(newUrl);
   document.querySelector('[title="theme"]').setAttribute('href', newUrl)
 }
 
 let activeColor = localStorage.getItem('set');
 
 if(activeColor === null) handleChangeColor('light')
-else  nameColor(activeColor)
+else  handleChangeColor(activeColor)
