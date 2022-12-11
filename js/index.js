@@ -1,3 +1,21 @@
+// появления контенат при скроле 
+const elements = document.querySelectorAll('.individuals-info');
+const options = {threshold: [0.2] };
+const observer = new IntersectionObserver(onEntry, options);
+
+for (let elm of elements) {
+  observer.observe(elm);
+}
+
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+     change.target.classList.add('element-show');
+    }
+  });
+}
+
+
 // слайдер
 const slides = document.querySelectorAll('.slide')
 
@@ -56,6 +74,7 @@ const container = document.querySelector(".container-2");
 document.getElementById("signIn").addEventListener("click", () => {
   container.classList.remove('right-panel-active')
 });
+
 document.getElementById("signUp").addEventListener("click", () => {
   container.classList.add('right-panel-active')
 });
@@ -64,3 +83,33 @@ document.getElementById("signUp").addEventListener("click", () => {
 firstForm.addEventListener("submit", (e) => e.preventDefault());
 secondForm.addEventListener("submit", (e) => e.preventDefault());
 
+// смена цвета + локал сторидж
+
+const switchersColor = document.querySelector('.light_black')
+const switcher = [...switchersColor.children]
+
+switcher.forEach(item =>{
+
+  item.addEventListener('click', event =>{
+
+   if(event.tabs !== switcher){
+    nameColor(event.target.dataset.set)
+    localStorage.setItem('set', event.target.dataset.set )
+   }
+
+  })
+})
+
+function nameColor(color){
+  let newUrl = `./css/${color}.css`;
+  console.log(newUrl)
+  document.querySelector('[title="theme"]').setAttribute('href', newUrl)
+}
+
+let activeColor = localStorage.getItem('set');
+
+if(activeColor === null){
+  nameColor('light')
+}else{
+  nameColor(activeColor)
+}

@@ -1,0 +1,40 @@
+.header__nav__link{
+  color: rgba(255, 255, 255, 0.781);
+}
+.header__nav__link:hover{
+  color: rgb(255, 255, 255);
+}
+
+.works,.about_me,.the-studio,.individuals,.header,
+.clients{
+  background-color: #202020;
+}
+
+.our-title,.header__title,.about-info,.our-work-link,
+.about-title,.the-studio-title,.individuals-info,.clients,
+.individuals-title,.block-info-text,.block-info-text-litle{
+  color: aliceblue;
+}
+
+.footer{
+  background-color: aliceblue
+}
+.footer-text{
+  color: #202020;
+}
+
+.light_black{
+  background: #202020;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.459);
+}
+.changeTheme[data-set="black"]{
+  display: none;
+}
+.changeTheme[data-set="light"]{
+  display: block;
+}
+.social-network{
+  background-color: aliceblue;
+  border-radius: 5px;
+  padding: 10px 0;
+}

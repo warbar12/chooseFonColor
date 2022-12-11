@@ -1,0 +1,67 @@
+
+.light_black{
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(39,38,40,0.4);
+}
+/* ------------------header------------------ */
+.header{
+  background-color: aliceblue;
+}
+
+.header__nav__link{
+  color: #4b4b4bc5;
+}
+.header__nav__link:hover{
+  color: rgb(31, 31, 31);
+}
+
+.block-info-text{
+  color: aliceblue;
+}
+.block-info-text-litle{
+  color: aliceblue;
+}
+
+.individuals{
+  background-color: rgb(231, 231, 231);
+}
+
+.companies{
+  background-color: rgba(0, 0, 0, 0.888);
+}
+.companies-title{
+
+  color: rgb(232, 239, 245);
+
+}
+
+.clients{
+  background-color: #202020;
+  color: aliceblue;
+}
+
+.content-text{
+  color: aliceblue;
+}
+
+.works{
+  background-color:rgb(190, 190, 190);
+}
+
+.our-work-link{
+  color: #202020;
+}
+
+.footer{
+  background-color: #202020
+}
+.footer-text{
+  color: aliceblue;
+}
+
+.changeTheme[data-set="black"]{
+  display: block;
+}
+.changeTheme[data-set="light"]{
+  display: none;
+}
