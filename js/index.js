@@ -93,23 +93,19 @@ switcher.forEach(item =>{
   item.addEventListener('click', event =>{
 
    if(event.tabs !== switcher){
-    nameColor(event.target.dataset.set)
-    localStorage.setItem('set', event.target.dataset.set )
+      handleChangeColor(event.target.dataset.set)
+      localStorage.setItem('set', event.target.dataset.set )
    }
 
   })
 })
 
-function nameColor(color){
+function handleChangeColor(color){
   let newUrl = `./css/${color}.css`;
-  console.log(newUrl)
   document.querySelector('[title="theme"]').setAttribute('href', newUrl)
 }
 
 let activeColor = localStorage.getItem('set');
 
-if(activeColor === null){
-  nameColor('light')
-}else{
-  nameColor(activeColor)
-}
+if(activeColor === null) handleChangeColor('light')
+else  nameColor(activeColor)
