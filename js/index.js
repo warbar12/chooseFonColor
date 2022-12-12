@@ -85,23 +85,21 @@ secondForm.addEventListener("submit", (e) => e.preventDefault());
 
 // смена цвета + локал сторидж
 
-const switchersColor = document.querySelector('.light_black')
-const switcher = [...switchersColor.children]
+const switchersColor = document.querySelectorAll('.changeTheme')
 
-switcher.forEach(item =>{
+switchersColor.forEach(item =>{
 
   item.addEventListener('click', event =>{
 
-   if(event.item !== switchersColor){
-      handleChangeColor(event.target.dataset.set)
-      localStorage.setItem('set', event.target.dataset.set )
-   }
+    const theme = event.target.dataset.set || event.target.perentNode.dataset.set
+    handleChangeColor(theme)
+    localStorage.setItem('set', theme)
+
   })
 })
 
 function handleChangeColor(color){
   let newUrl = `./css/${color}.css`;
-  console.log(newUrl);
   document.querySelector('[title="theme"]').setAttribute('href', newUrl)
 }
 
